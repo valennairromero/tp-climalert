@@ -1,4 +1,7 @@
 package ar.edu.utn.frba.dds.dto;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public record WeatherResponse(
     Location location,
     Current current
@@ -9,7 +12,7 @@ public record WeatherResponse(
   ) {}
 
   public record Current(
-      Double temp_c,
+      @JsonProperty("temp_c") Double tempC,
       Integer humedad,
       Condition condition
   ) {}
