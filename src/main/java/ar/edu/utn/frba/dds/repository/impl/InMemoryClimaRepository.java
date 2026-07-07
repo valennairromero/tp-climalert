@@ -4,12 +4,13 @@ import ar.edu.utn.frba.dds.entities.Clima;
 import ar.edu.utn.frba.dds.repository.IclimaRepository;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 import org.springframework.stereotype.Repository;
 
 @Repository
 public class InMemoryClimaRepository implements IclimaRepository {
 
-  private final List<Clima> climas = new ArrayList<>();
+  private final List<Clima> climas = new CopyOnWriteArrayList<>();
 
   @Override
   public void guardar(Clima clima) {
